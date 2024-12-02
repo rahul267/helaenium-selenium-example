@@ -1,0 +1,31 @@
+
+1.Install docker desktop on windows m/c
+2. Run the CMD and type docker run -t -i ubuntu /bin/bash to download ubuntu
+3. update the repo : apt-get update
+4. Run the command to install libimobiledevice :
+ apt-get install usbmuxd libimobiledevice6 libimobiledevice-utils
+ 
+-----------WSL------------
+apt install linux-tools-generic
+update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/5.4.0-77-generic/usbip 20
+
+Attaching a device :
+winget install --interactive --exact dorssel.usbipd-win
+On windows admin cmd :
+ --> usbipd wsl list
+ --> usbipd wsl attach --busid <busid>
+ 
+ On Ubuntu docker :
+  apt install linux-tools-generic hwdata
+  update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/*-generic/usbip 20
+
+ -->  lsusb   : this command will show this usbip
+ 
+ Now run specific commnads for iphone :
+  --> ideviceinfo
+  -->idevicesetlocation -- 38.5987917 -121.4317402 
+  --> idevicesetlocation reset
+
+
+Source : https://learn.microsoft.com/en-us/windows/wsl/connect-usb
+        
