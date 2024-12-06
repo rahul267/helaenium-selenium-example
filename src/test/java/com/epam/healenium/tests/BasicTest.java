@@ -45,12 +45,12 @@ public class BasicTest {
         var localPage = new LocalPage(driver);
         localPage.navigate();
 
-        // wait.until(d -> driver.findElement(By.id("firstName")).isDisplayed());
-        driver.findElement(By.id("firstName")).sendKeys("rahul");
-        driver.findElement(By.id("lastName")).sendKeys("kumar");
-        driver.findElement(By.id("email")).sendKeys("dog@gmail.com");
-        driver.findElement(By.id("address")).sendKeys("2b 015");
-        driver.findElement(By.id("address2")).sendKeys("Sun city Gloria");
-        new Select(driver.findElement(By.id("country"))).selectByIndex(1);
+        wait.until(d -> driver.findElement(By.cssSelector("#firstName")).isDisplayed());
+        driver.findElement(By.cssSelector("#firstName")).sendKeys("rahul");
+        driver.findElement(By.cssSelector("#lastName")).sendKeys("kumar");
+        driver.findElement(By.cssSelector("#email")).sendKeys("dog@gmail.com");
+        driver.findElement(By.cssSelector("#address")).sendKeys("2b 015");
+        driver.findElement(By.cssSelector("#address2")).sendKeys("Sun city Gloria");
+        new Select(driver.findElement(By.cssSelector("#country"))).selectByIndex(1);
     }
 }
